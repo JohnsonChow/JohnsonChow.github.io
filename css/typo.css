@@ -1,4 +1,7 @@
 @charset "utf-8";
+.gutter{
+  width: 10px;
+}
 
 /* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
 html {
@@ -47,6 +50,7 @@ input::-moz-focus-inner {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+  width: 100%;
 }
 
 /* 去除默认边框 */
