@@ -2288,10 +2288,12 @@
 				#me .links{
 					font-weight: bold;
 					color: #393D4C;
+					/* feb445 */
 				}
 				#me .links:hover{
 					font-weight: bold;
-					color: #717585 !important;
+					color: #feb445 !important;
+					/* color: #717585 !important; */
 				}
 				#me .avator{
 					width: 35%;
