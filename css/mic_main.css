@@ -2280,8 +2280,16 @@
 			#me {
 				padding: 0;
 				margin-right: 3rem; 
-				height: 20em;
-			}
+				/* height: 40em; */
+				display: flex;
+			}	
+				#me .links{
+					font-weight: bold;
+					color: #18bfef;
+				}
+				#me .avator{
+					width: 35%;
+				}
 
 				#me .pic {
 					text-decoration: none;
@@ -2334,11 +2342,13 @@
 					}
 
 				#me header {
-					position: absolute;
+					/* position: absolute;
 					left: 0;
 					top: 0;
 					width: 100%;
-					height: 100%;
+					height: 100%; */
+					width: 65%;
+					margin-top: 0.5em;
 					margin-left: 3.5em;
 				}
 
