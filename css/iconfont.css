@@ -1,16 +1,28 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4442711 */
-  src: url('iconfont.woff2?t=1708680066948') format('woff2'),
-       url('iconfont.woff?t=1708680066948') format('woff'),
-       url('iconfont.ttf?t=1708680066948') format('truetype');
+  src: url('../fonts/iconfont.woff2?t=1708758989007') format('woff2'),
+       url('../fonts/iconfont.woff?t=1708758989007') format('woff'),
+       url('../fonts/iconfont.ttf?t=1708758989007') format('truetype');
 }
 
 .iconfont {
   font-family: "iconfont" !important;
-  font-size: 24px;
+  font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-social-instagram:before {
+  content: "\e602";
+}
+
+.icon-Instagram1:before {
+  content: "\ef46";
+}
+
+.icon-Instagram:before {
+  content: "\ea10";
 }
 
 .icon-email-fill:before {
