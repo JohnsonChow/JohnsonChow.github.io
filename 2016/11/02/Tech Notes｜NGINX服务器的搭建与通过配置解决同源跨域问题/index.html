@@ -24,7 +24,7 @@
           content: ' ';
           position: fixed;
           top: 0;
-          background: url('https://test.img.hoski.cn/bg.jpeg') center 0 no-repeat;
+          background: url('https://test.img.hoski.cn/2019%E5%B9%B4%E5%BA%A6%E6%9C%80%E4%BD%B3%E8%AF%84%E9%80%892019%E5%B9%B4%E5%BA%A6%E5%80%99%E9%80%89%E5%90%8D%E5%8D%9533.JPG') center 0 no-repeat;
           right: 0;
           bottom: 0;
           left: 0;
@@ -65,15 +65,16 @@
 	
 <meta name="generator" content="Hexo 5.3.0"></head>
     
-		
-<!-- Layouts -->
+		<!-- Layouts -->
 
 
 
 <!--  代码渲染  -->
 <link rel="stylesheet" href="/css/prism_coy.css" />
-<link rel="stylesheet" href="/css/typo.css" />
+<!-- <link rel="stylesheet" href="/css/typo.css" /> -->
+<link rel="stylesheet" href="/css/lapis.css" />
 <!-- 文章页 -->
+
 <body class="is-loading">
     <!-- Wrapper 外包 s-->
     <div id="wrapper" class="fade-in">
@@ -199,12 +200,15 @@
 	</ul>
 </nav>
 
-        <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://test.img.hoski.cn/18-1-1/51627360.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >NGINX服务器的搭建与通过配置解决同源跨域问题</h2></a>
+        <div id="main">
+            <div class="post_page_title_img"
+                style="height: 25rem;background-image: url(https://test.img.hoski.cn/18-1-1/51627360.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;">
+                    <h2>NGINX服务器的搭建与通过配置解决同源跨域问题</h2>
+                </a>
             </div>
             <!-- Post -->
-            <div class="typo" style="padding: 3rem;">
+            <div class="markdownChouworld" id="write" style="padding: 3rem;">
                 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本团队在主打产品CRM中通过前端AngularJS调用后台NodeJS接口用了Ajax技术，但是这样问题就出现了，由于NodeJs启动服务与AngularJs用Ajax调用接口同样来自于同一台IP的服务器但是端口不一样，所以产生了同源跨域问题。为此我记录一下内容为了解决同源跨域问题。</p>
 <h2 id="什么是同源跨域问题呢？"><a href="#什么是同源跨域问题呢？" class="headerlink" title="什么是同源跨域问题呢？"></a>什么是同源跨域问题呢？</h2><p>首先浏览器安全的基石是”同源政策”（same-origin policy）。最初，它的含义是指，A网页设置的 Cookie，B网页不能打开，除非这两个网页”同源”。所谓”同源”指的是”三个相同”。仅有同协议，同端口和同IP才可以被称为同源。</p>
 <p>同源政策的目的，是为了保证用户信息的安全，防止恶意的网站窃取数据。 设想这样一种情况：A网站是一家银行，用户登录以后，又去浏览其他网站。如果其他网站可以读取A网站的 Cookie，会发生什么？ 很显然，如果 Cookie 包含隐私（比如存款总额），这些信息就会泄漏。更可怕的是，Cookie 往往用来保存用户的登录状态，如果用户没有退出登录，其他网站就可以冒充用户，为所欲为。因为浏览器同时还规定，提交表单不受同源政策的限制。 由此可见，”同源政策”是必需的，否则 Cookie 可以共享，互联网就毫无安全可言了。</p>
@@ -324,14 +328,18 @@ $('.btn_click_load').click(function() {
         </div>
         <!-- Copyright 版权 start -->
                 <div id="copyright">
+            
+            <!-- <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span> -->
+            <span id="busuanzi_container_site_pv" style="color: #feb445;">The background picture of this website is
+                taken by me. <br />Please mark the source when personal use collection is published (please mark the
+                source @chouworld.cc), if commercial infringement.</span>
+            
             <ul>
                 <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
                 <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
                 <li>Redecorate(Fork) by <a href=" " style="border-bottom: none;">Johnson Chow</a></li>
             </ul>
-            
-                <!-- <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span> -->
-			
+
         </div>
     </div>
 </body>

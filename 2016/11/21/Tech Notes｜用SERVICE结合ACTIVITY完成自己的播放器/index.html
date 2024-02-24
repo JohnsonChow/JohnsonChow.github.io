@@ -24,7 +24,7 @@
           content: ' ';
           position: fixed;
           top: 0;
-          background: url('https://test.img.hoski.cn/bg.jpeg') center 0 no-repeat;
+          background: url('https://test.img.hoski.cn/2019%E5%B9%B4%E5%BA%A6%E6%9C%80%E4%BD%B3%E8%AF%84%E9%80%892019%E5%B9%B4%E5%BA%A6%E5%80%99%E9%80%89%E5%90%8D%E5%8D%9533.JPG') center 0 no-repeat;
           right: 0;
           bottom: 0;
           left: 0;
@@ -65,15 +65,16 @@
 	
 <meta name="generator" content="Hexo 5.3.0"></head>
     
-		
-<!-- Layouts -->
+		<!-- Layouts -->
 
 
 
 <!--  代码渲染  -->
 <link rel="stylesheet" href="/css/prism_coy.css" />
-<link rel="stylesheet" href="/css/typo.css" />
+<!-- <link rel="stylesheet" href="/css/typo.css" /> -->
+<link rel="stylesheet" href="/css/lapis.css" />
 <!-- 文章页 -->
+
 <body class="is-loading">
     <!-- Wrapper 外包 s-->
     <div id="wrapper" class="fade-in">
@@ -199,12 +200,15 @@
 	</ul>
 </nav>
 
-        <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://test.img.hoski.cn/18-1-1/92664526.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >用SERVICE结合ACTIVITY完成自己的播放器</h2></a>
+        <div id="main">
+            <div class="post_page_title_img"
+                style="height: 25rem;background-image: url(https://test.img.hoski.cn/18-1-1/92664526.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;">
+                    <h2>用SERVICE结合ACTIVITY完成自己的播放器</h2>
+                </a>
             </div>
             <!-- Post -->
-            <div class="typo" style="padding: 3rem;">
+            <div class="markdownChouworld" id="write" style="padding: 3rem;">
                 <h2 id="1-Service介绍"><a href="#1-Service介绍" class="headerlink" title="1.Service介绍"></a>1.Service介绍</h2><p> 作为Android四大组件之一，想必有非常打的功用。那么这个公用可以干什么呢？他可以帮你在后台帮你做不需要与UI相关的事，例如做长连接的时候需要保持心跳啊，这种就可以用Service来做。有人说那不有点像线程，做一个心跳保持连接不就好了吗？虽然这话不假，但是这是错误的，第一，他不像为了去做通信连接不能再UI线程中启用，就去起个工作线程去跑。而是在后台做自己的事，没有与前台交互（有可能有那么一点，或者说获得相关的事例也是可以操作的）；第二，其实Service也是UI线程里的，哪有人说，那怎么去做长连接通信呢，同样你也要去起线程的。</p>
 <p> 说成这样不知道大家理解了没有。下面回归正题，直接上代码。</p>
 <h2 id="2-Service一般写法"><a href="#2-Service一般写法" class="headerlink" title="2.Service一般写法"></a>2.Service一般写法</h2><p> 以下代码是Service的一般写法和通用写法，为了是在Activity绑定Service然后产生myService的事例。</p>
@@ -310,14 +314,18 @@ $('.btn_click_load').click(function() {
         </div>
         <!-- Copyright 版权 start -->
                 <div id="copyright">
+            
+            <!-- <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span> -->
+            <span id="busuanzi_container_site_pv" style="color: #feb445;">The background picture of this website is
+                taken by me. <br />Please mark the source when personal use collection is published (please mark the
+                source @chouworld.cc), if commercial infringement.</span>
+            
             <ul>
                 <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
                 <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
                 <li>Redecorate(Fork) by <a href=" " style="border-bottom: none;">Johnson Chow</a></li>
             </ul>
-            
-                <!-- <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span> -->
-			
+
         </div>
     </div>
 </body>
