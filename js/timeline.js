@@ -235,4 +235,11 @@ function Timeline(cvs) {
 
     self.isOK = init();
 }
-new Timeline($('#cvs3').get(0)).toggle(true);
+try {
+    new Timeline($('#cvs3').get(0)).toggle(true);
+
+    console.log('hello')
+} catch (error) {
+    console.log('error')
+}
+
