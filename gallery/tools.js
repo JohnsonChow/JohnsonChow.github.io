@@ -187,7 +187,7 @@ let json = [{
 ]
 json.forEach((element,index) => {
     console.log(element.title+':')
-    console.log("  full_link:"+element.full_link)
-    console.log("  thumb_link:"+element.thumb_link)
-    console.log("  descr:"+element.descr)
+    console.log("  full_link: "+element.full_link)
+    console.log("  thumb_link: "+element.thumb_link)
+    console.log("  descr: "+element.descr)
 });
