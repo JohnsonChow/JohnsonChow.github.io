@@ -55,8 +55,12 @@
             left: 0;
             bottom: 0;
             right: 0;
-            transition: opacity 1s ease-in-out;
             /* 添加动画效果 */
+            animation-name: fadeIn;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+            opacity: 0;
             height: 100%;
             width: 100%;
         }
@@ -66,6 +70,16 @@
             /* 当前展示的图片显示 */
             opacity: 1;
             /* 完全不透明 */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
     </style>
     <!-- / -->
@@ -367,7 +381,7 @@
         slides[currentSlideIndex].classList.add('active'); // 添加当前图片的活动类名
     }
 
-    setInterval(showNextSlide, 5000); // 每隔3秒切换到下一张图片
+    setInterval(showNextSlide, 4200); // 每隔3秒切换到下一张图片
 </script>
 
 
