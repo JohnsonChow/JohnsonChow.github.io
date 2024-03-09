@@ -6,7 +6,7 @@
 	<link rel="shortcut icon" href="/img/logo_miccall1.png">
 	
 	    <title>
-    CHOU`WORLD
+        CHOU`WORLD
     </title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -14,24 +14,61 @@
     <link rel="stylesheet" href="/css/dropdownMenu.css" />
     <meta name="keywords" content="CHOUWORLD" />
     
-    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	 
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
     <noscript>
         <link rel="stylesheet" href="/css/noscript.css" />
     </noscript>
     <style type="text/css">
-        body:before {
+        /* body:before {
           content: ' ';
           position: fixed;
           top: 0;
-          background: url('https://test.img.hoski.cn/2019%E5%B9%B4%E5%BA%A6%E6%9C%80%E4%BD%B3%E8%AF%84%E9%80%892019%E5%B9%B4%E5%BA%A6%E5%80%99%E9%80%89%E5%90%8D%E5%8D%9533.JPG') center 0 no-repeat;
+          background: url('https://test.img.hoski.cn/thub_background1.jpg') center 0 no-repeat;
           right: 0;
           bottom: 0;
           left: 0;
           background-size: cover; 
+        } */
+        .slider {
+            width: 100%;
+            /* 设置容器宽度 */
+            height: 100%;
+            /* 设置容器高度 */
+            overflow: hidden;
+            /* 隐藏超出容器大小的内容 */
+            position: fixed;
+            /* 相对定位，为了后续子元素的绝对定位 */
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+
+        .slide {
+            display: none;
+            /* 初始状态下所有图片都不显示 */
+            position: absolute;
+            /* 绝对定位，根据需要调整位置 */
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            transition: opacity 1s ease-in-out;
+            /* 添加动画效果 */
+            height: 100%;
+            width: 100%;
+        }
+
+        .active {
+            display: block;
+            /* 当前展示的图片显示 */
+            opacity: 1;
+            /* 完全不透明 */
         }
     </style>
-<!-- / -->
+    <!-- / -->
 	    
   
     <script type="text/x-mathjax-config">

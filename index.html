@@ -6,7 +6,7 @@
 	<link rel="shortcut icon" href="/img/logo_miccall1.png">
 	
 	    <title>
-    CHOU`WORLD
+        CHOU`WORLD
     </title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -14,24 +14,61 @@
     <link rel="stylesheet" href="/css/dropdownMenu.css" />
     <meta name="keywords" content="CHOUWORLD" />
     
-    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	 
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
     <noscript>
         <link rel="stylesheet" href="/css/noscript.css" />
     </noscript>
     <style type="text/css">
-        body:before {
+        /* body:before {
           content: ' ';
           position: fixed;
           top: 0;
-          background: url('https://test.img.hoski.cn/2019%E5%B9%B4%E5%BA%A6%E6%9C%80%E4%BD%B3%E8%AF%84%E9%80%892019%E5%B9%B4%E5%BA%A6%E5%80%99%E9%80%89%E5%90%8D%E5%8D%9533.JPG') center 0 no-repeat;
+          background: url('https://test.img.hoski.cn/thub_background1.jpg') center 0 no-repeat;
           right: 0;
           bottom: 0;
           left: 0;
           background-size: cover; 
+        } */
+        .slider {
+            width: 100%;
+            /* 设置容器宽度 */
+            height: 100%;
+            /* 设置容器高度 */
+            overflow: hidden;
+            /* 隐藏超出容器大小的内容 */
+            position: fixed;
+            /* 相对定位，为了后续子元素的绝对定位 */
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+
+        .slide {
+            display: none;
+            /* 初始状态下所有图片都不显示 */
+            position: absolute;
+            /* 绝对定位，根据需要调整位置 */
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            transition: opacity 1s ease-in-out;
+            /* 添加动画效果 */
+            height: 100%;
+            width: 100%;
+        }
+
+        .active {
+            display: block;
+            /* 当前展示的图片显示 */
+            opacity: 1;
+            /* 完全不透明 */
         }
     </style>
-<!-- / -->
+    <!-- / -->
 	    
   
     <script type="text/x-mathjax-config">
@@ -66,6 +103,16 @@
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 <body class="is-loading">
+    <div class="slider">
+        <!-- bg1: https://test.img.hoski.cn/thub_background1.jpg
+        bg2: https://test.img.hoski.cn/thub_background2.jpg
+        bg3: https://test.img.hoski.cn/thub_background3.jpg -->
+        <img src="https://test.img.hoski.cn/thub_background1.jpg" alt="" class="slide active"> <!-- 第一张图片 -->
+        <img src="https://test.img.hoski.cn/USYD_%E5%89%AF%E6%9C%AC.jpg" alt="" class="slide"> <!-- 其他图片 -->
+        <img src="https://test.img.hoski.cn/thub_background3.jpg" alt="" class="slide">
+    </div>
+
+
     <!-- Wrapper 外包 s-->
     <div id="wrapper" class="fade-in overlay">
         <!-- Intro 头部显示 s -->
@@ -203,7 +250,7 @@
         <!-- Main 主要部分 start -->
         
         <!-- Main-first -->
-            <div id="main">
+        <div id="main">
     <!-- Main first s-->
     <article id="me" class="panel" style="margin-bottom: 0;background-color: #2C2F3D">
         <div style="height: 100%;" class="Keywords">
@@ -259,293 +306,323 @@
         
         <!-- 文章列表   s -->
         <div id="main" style="background-color: transparent; padding:0;">
-        <section class="link_container" style="margin-top: 0; background-color: transparent; ">
-            <div class="link_row">
-                <!-- 文章sample  s-->
+            <section class="link_container" style="margin-top: 0; background-color: transparent; ">
+                <div class="link_row">
+                    <!-- 文章sample  s-->
 
-                
-                <div class="6u 12u(narrower)">
-                    <section class="link_box special">
-                       <a href="/2023/02/19/Tech%20Notes%EF%BD%9CTypeScript%20%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89Interface%20%E5%92%8C%20%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B/">
-                        <div class="page_title" style="background-image: url(https://test.img.hoski.cn/typescript.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
-                            <!--标题-->
-                             <h2 class="page_title_text"> TypeScript 学习日记（二）  Interface 和 对象类型 </h2>
-                            <!--段落-->
-                        </div>
-                        </a>
-                        <div class="home-post-info">
-                            <!-- Author Avatar -->
-                            <div class="home-post-info-author-avatar">
-                                <h6><span class="home-post-info-data">2023-02-19</span></h6>
-                                <div class="home-post-info-Category">
-                                    <!-- Category -->
-                                    <span>
-                            <h6>
-                            <a class="post_category-link" target="_blank" rel="noopener" href="http://localhost:4000/categories/Algorithm/">
-                                <a class="post_category-link" href="/categories/TypeScript/">TypeScript</a></a>
-                            </h6>
-                        </span>
+                    
+                    <div class="6u 12u(narrower)">
+                        <section class="link_box special">
+                            <a href="/2023/02/19/Tech%20Notes%EF%BD%9CTypeScript%20%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89Interface%20%E5%92%8C%20%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B/">
+                                <div class="page_title"
+                                    style="background-image: url(https://test.img.hoski.cn/typescript.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
+                                    <!--标题-->
+                                    <h2 class="page_title_text"> TypeScript 学习日记（二）  Interface 和 对象类型 </h2>
+                                    <!--段落-->
+                                </div>
+                            </a>
+                            <div class="home-post-info">
+                                <!-- Author Avatar -->
+                                <div class="home-post-info-author-avatar">
+                                    <h6><span class="home-post-info-data">2023-02-19</span>
+                                    </h6>
+                                    <div class="home-post-info-Category">
+                                        <!-- Category -->
+                                        <span>
+                                            <h6>
+                                                <a class="post_category-link"
+                                                    target="_blank" rel="noopener" href="http://localhost:4000/categories/Algorithm/">
+                                                    <a class="post_category-link" href="/categories/TypeScript/">TypeScript</a></a>
+                                            </h6>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- 文章sample  e-->
-            
-                <div class="6u 12u(narrower)">
-                    <section class="link_box special">
-                       <a href="/2021/02/16/Tech%20Notes%EF%BD%9C%20docker%E6%98%AF%E4%BB%80%E4%B9%88/">
-                        <div class="page_title" style="background-image: url(https://test.img.hoski.cn/18-1-1/92664526.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
-                            <!--标题-->
-                             <h2 class="page_title_text"> Docker是什么 </h2>
-                            <!--段落-->
-                        </div>
-                        </a>
-                        <div class="home-post-info">
-                            <!-- Author Avatar -->
-                            <div class="home-post-info-author-avatar">
-                                <h6><span class="home-post-info-data">2021-02-16</span></h6>
-                                <div class="home-post-info-Category">
-                                    <!-- Category -->
-                                    <span>
-                            <h6>
-                            <a class="post_category-link" target="_blank" rel="noopener" href="http://localhost:4000/categories/Algorithm/">
-                                <a class="post_category-link" href="/categories/Docker/">Docker</a></a>
-                            </h6>
-                        </span>
+                        </section>
+                    </div>
+                    <!-- 文章sample  e-->
+                    
+                    <div class="6u 12u(narrower)">
+                        <section class="link_box special">
+                            <a href="/2021/02/16/Tech%20Notes%EF%BD%9C%20docker%E6%98%AF%E4%BB%80%E4%B9%88/">
+                                <div class="page_title"
+                                    style="background-image: url(https://test.img.hoski.cn/18-1-1/92664526.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
+                                    <!--标题-->
+                                    <h2 class="page_title_text"> Docker是什么 </h2>
+                                    <!--段落-->
+                                </div>
+                            </a>
+                            <div class="home-post-info">
+                                <!-- Author Avatar -->
+                                <div class="home-post-info-author-avatar">
+                                    <h6><span class="home-post-info-data">2021-02-16</span>
+                                    </h6>
+                                    <div class="home-post-info-Category">
+                                        <!-- Category -->
+                                        <span>
+                                            <h6>
+                                                <a class="post_category-link"
+                                                    target="_blank" rel="noopener" href="http://localhost:4000/categories/Algorithm/">
+                                                    <a class="post_category-link" href="/categories/Docker/">Docker</a></a>
+                                            </h6>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- 文章sample  e-->
-            
-                <div class="6u 12u(narrower)">
-                    <section class="link_box special">
-                       <a href="/2021/02/16/Tech%20Notes%EF%BD%9CTech%20Notes%EF%BD%9CDocker%20volume%20%E6%8C%82%E8%BD%BD%E6%97%B6%E6%96%87%E4%BB%B6%E6%88%96%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8D%E5%AD%98%E5%9C%A8/">
-                        <div class="page_title" style="background-image: url(https://test.img.hoski.cn/18-1-1/92664526.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
-                            <!--标题-->
-                             <h2 class="page_title_text"> Docker volume 挂载时文件或文件夹不存在 </h2>
-                            <!--段落-->
-                        </div>
-                        </a>
-                        <div class="home-post-info">
-                            <!-- Author Avatar -->
-                            <div class="home-post-info-author-avatar">
-                                <h6><span class="home-post-info-data">2021-02-16</span></h6>
-                                <div class="home-post-info-Category">
-                                    <!-- Category -->
-                                    <span>
-                            <h6>
-                            <a class="post_category-link" target="_blank" rel="noopener" href="http://localhost:4000/categories/Algorithm/">
-                                <a class="post_category-link" href="/categories/Docker/">Docker</a></a>
-                            </h6>
-                        </span>
+                        </section>
+                    </div>
+                    <!-- 文章sample  e-->
+                    
+                    <div class="6u 12u(narrower)">
+                        <section class="link_box special">
+                            <a href="/2021/02/16/Tech%20Notes%EF%BD%9CTech%20Notes%EF%BD%9CDocker%20volume%20%E6%8C%82%E8%BD%BD%E6%97%B6%E6%96%87%E4%BB%B6%E6%88%96%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8D%E5%AD%98%E5%9C%A8/">
+                                <div class="page_title"
+                                    style="background-image: url(https://test.img.hoski.cn/18-1-1/92664526.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
+                                    <!--标题-->
+                                    <h2 class="page_title_text"> Docker volume 挂载时文件或文件夹不存在 </h2>
+                                    <!--段落-->
+                                </div>
+                            </a>
+                            <div class="home-post-info">
+                                <!-- Author Avatar -->
+                                <div class="home-post-info-author-avatar">
+                                    <h6><span class="home-post-info-data">2021-02-16</span>
+                                    </h6>
+                                    <div class="home-post-info-Category">
+                                        <!-- Category -->
+                                        <span>
+                                            <h6>
+                                                <a class="post_category-link"
+                                                    target="_blank" rel="noopener" href="http://localhost:4000/categories/Algorithm/">
+                                                    <a class="post_category-link" href="/categories/Docker/">Docker</a></a>
+                                            </h6>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- 文章sample  e-->
-            
-                <div class="6u 12u(narrower)">
-                    <section class="link_box special">
-                       <a href="/2020/04/11/Tech%20Notes%EF%BD%9C%E5%85%B3%E4%BA%8Eexpress%E8%80%81%E9%A1%B9%E7%9B%AE%E5%A6%82%E4%BD%95%E6%91%87%E8%BA%AB%E4%B8%80%E5%8F%98%E6%94%AF%E6%8C%81babel6/">
-                        <div class="page_title" style="background-image: url(https://test.img.hoski.cn/blog/%2A%2AWX20200411-204643%402x.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
-                            <!--标题-->
-                             <h2 class="page_title_text"> 关于express老项目如何摇身一变支持babel6+ </h2>
-                            <!--段落-->
-                        </div>
-                        </a>
-                        <div class="home-post-info">
-                            <!-- Author Avatar -->
-                            <div class="home-post-info-author-avatar">
-                                <h6><span class="home-post-info-data">2020-04-11</span></h6>
-                                <div class="home-post-info-Category">
-                                    <!-- Category -->
-                                    <span>
-                            <h6>
-                            <a class="post_category-link" target="_blank" rel="noopener" href="http://localhost:4000/categories/Algorithm/">
-                                <a class="post_category-link" href="/categories/Javascript/">Javascript</a></a>
-                            </h6>
-                        </span>
+                        </section>
+                    </div>
+                    <!-- 文章sample  e-->
+                    
+                    <div class="6u 12u(narrower)">
+                        <section class="link_box special">
+                            <a href="/2020/04/11/Tech%20Notes%EF%BD%9C%E5%85%B3%E4%BA%8Eexpress%E8%80%81%E9%A1%B9%E7%9B%AE%E5%A6%82%E4%BD%95%E6%91%87%E8%BA%AB%E4%B8%80%E5%8F%98%E6%94%AF%E6%8C%81babel6/">
+                                <div class="page_title"
+                                    style="background-image: url(https://test.img.hoski.cn/blog/%2A%2AWX20200411-204643%402x.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
+                                    <!--标题-->
+                                    <h2 class="page_title_text"> 关于express老项目如何摇身一变支持babel6+ </h2>
+                                    <!--段落-->
+                                </div>
+                            </a>
+                            <div class="home-post-info">
+                                <!-- Author Avatar -->
+                                <div class="home-post-info-author-avatar">
+                                    <h6><span class="home-post-info-data">2020-04-11</span>
+                                    </h6>
+                                    <div class="home-post-info-Category">
+                                        <!-- Category -->
+                                        <span>
+                                            <h6>
+                                                <a class="post_category-link"
+                                                    target="_blank" rel="noopener" href="http://localhost:4000/categories/Algorithm/">
+                                                    <a class="post_category-link" href="/categories/Javascript/">Javascript</a></a>
+                                            </h6>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- 文章sample  e-->
-            
-                <div class="6u 12u(narrower)">
-                    <section class="link_box special">
-                       <a href="/2019/08/29/My%20Trip%20Logs%20%EF%BD%9C%20%E5%8E%86%E6%97%B648%E5%B0%8F%E6%97%B6%E7%9A%84%E9%95%BF%E9%80%94%E9%A3%9E%E8%A1%8C%EF%BC%8C%E6%88%91%E7%9A%84%E6%AC%A7%E6%B4%B2%E4%B9%8B%E8%A1%8CEP01/">
-                        <div class="page_title" style="background-image: url(https://test.img.hoski.cn/WechatIMG253.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
-                            <!--标题-->
-                             <h2 class="page_title_text"> 历时48小时的长途飞行，我的欧洲之行 EP01 </h2>
-                            <!--段落-->
-                        </div>
-                        </a>
-                        <div class="home-post-info">
-                            <!-- Author Avatar -->
-                            <div class="home-post-info-author-avatar">
-                                <h6><span class="home-post-info-data">2019-08-29</span></h6>
-                                <div class="home-post-info-Category">
-                                    <!-- Category -->
-                                    <span>
-                            <h6>
-                            <a class="post_category-link" target="_blank" rel="noopener" href="http://localhost:4000/categories/Algorithm/">
-                                <a class="post_category-link" href="/categories/My-Trip-Logs/">My Trip Logs</a></a>
-                            </h6>
-                        </span>
+                        </section>
+                    </div>
+                    <!-- 文章sample  e-->
+                    
+                    <div class="6u 12u(narrower)">
+                        <section class="link_box special">
+                            <a href="/2019/08/29/My%20Trip%20Logs%20%EF%BD%9C%20%E5%8E%86%E6%97%B648%E5%B0%8F%E6%97%B6%E7%9A%84%E9%95%BF%E9%80%94%E9%A3%9E%E8%A1%8C%EF%BC%8C%E6%88%91%E7%9A%84%E6%AC%A7%E6%B4%B2%E4%B9%8B%E8%A1%8CEP01/">
+                                <div class="page_title"
+                                    style="background-image: url(https://test.img.hoski.cn/WechatIMG253.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
+                                    <!--标题-->
+                                    <h2 class="page_title_text"> 历时48小时的长途飞行，我的欧洲之行 EP01 </h2>
+                                    <!--段落-->
+                                </div>
+                            </a>
+                            <div class="home-post-info">
+                                <!-- Author Avatar -->
+                                <div class="home-post-info-author-avatar">
+                                    <h6><span class="home-post-info-data">2019-08-29</span>
+                                    </h6>
+                                    <div class="home-post-info-Category">
+                                        <!-- Category -->
+                                        <span>
+                                            <h6>
+                                                <a class="post_category-link"
+                                                    target="_blank" rel="noopener" href="http://localhost:4000/categories/Algorithm/">
+                                                    <a class="post_category-link" href="/categories/My-Trip-Logs/">My Trip Logs</a></a>
+                                            </h6>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- 文章sample  e-->
-            
-                <div class="6u 12u(narrower)">
-                    <section class="link_box special">
-                       <a href="/2018/12/04/My%20Trip%20Logs%20%EF%BD%9C%202018%E5%B9%B4%E7%BB%88%E4%B9%8B%E6%97%85%EF%BC%8C%E6%88%91%E7%9A%84%E4%B8%9C%E4%BA%AC%E6%A2%A6/">
-                        <div class="page_title" style="background-image: url(https://test.img.hoski.cn/18-12-4/51042194.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
-                            <!--标题-->
-                             <h2 class="page_title_text"> My Trip Logs ｜ 2018年终之旅，我的东京梦 </h2>
-                            <!--段落-->
-                        </div>
-                        </a>
-                        <div class="home-post-info">
-                            <!-- Author Avatar -->
-                            <div class="home-post-info-author-avatar">
-                                <h6><span class="home-post-info-data">2018-12-04</span></h6>
-                                <div class="home-post-info-Category">
-                                    <!-- Category -->
-                                    <span>
-                            <h6>
-                            <a class="post_category-link" target="_blank" rel="noopener" href="http://localhost:4000/categories/Algorithm/">
-                                <a class="post_category-link" href="/categories/My-Trip-Logs/">My Trip Logs</a></a>
-                            </h6>
-                        </span>
+                        </section>
+                    </div>
+                    <!-- 文章sample  e-->
+                    
+                    <div class="6u 12u(narrower)">
+                        <section class="link_box special">
+                            <a href="/2018/12/04/My%20Trip%20Logs%20%EF%BD%9C%202018%E5%B9%B4%E7%BB%88%E4%B9%8B%E6%97%85%EF%BC%8C%E6%88%91%E7%9A%84%E4%B8%9C%E4%BA%AC%E6%A2%A6/">
+                                <div class="page_title"
+                                    style="background-image: url(https://test.img.hoski.cn/18-12-4/51042194.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
+                                    <!--标题-->
+                                    <h2 class="page_title_text"> My Trip Logs ｜ 2018年终之旅，我的东京梦 </h2>
+                                    <!--段落-->
+                                </div>
+                            </a>
+                            <div class="home-post-info">
+                                <!-- Author Avatar -->
+                                <div class="home-post-info-author-avatar">
+                                    <h6><span class="home-post-info-data">2018-12-04</span>
+                                    </h6>
+                                    <div class="home-post-info-Category">
+                                        <!-- Category -->
+                                        <span>
+                                            <h6>
+                                                <a class="post_category-link"
+                                                    target="_blank" rel="noopener" href="http://localhost:4000/categories/Algorithm/">
+                                                    <a class="post_category-link" href="/categories/My-Trip-Logs/">My Trip Logs</a></a>
+                                            </h6>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- 文章sample  e-->
-            
-                <div class="6u 12u(narrower)">
-                    <section class="link_box special">
-                       <a href="/2018/10/05/My%20Trip%20Logs%20%EF%BD%9C%20%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%B2%A1%E6%9C%89%E9%81%BF%E5%BC%80%E6%8B%A5%E6%8C%A4%E7%9A%84%E5%8D%81%E4%B8%80/">
-                        <div class="page_title" style="background-image: url(https://test.img.hoski.cn/18-12-4/82144454.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
-                            <!--标题-->
-                             <h2 class="page_title_text"> 第一次没有避开拥挤的&#34;十一&#34; </h2>
-                            <!--段落-->
-                        </div>
-                        </a>
-                        <div class="home-post-info">
-                            <!-- Author Avatar -->
-                            <div class="home-post-info-author-avatar">
-                                <h6><span class="home-post-info-data">2018-10-05</span></h6>
-                                <div class="home-post-info-Category">
-                                    <!-- Category -->
-                                    <span>
-                            <h6>
-                            <a class="post_category-link" target="_blank" rel="noopener" href="http://localhost:4000/categories/Algorithm/">
-                                <a class="post_category-link" href="/categories/My-Trip-Logs/">My Trip Logs</a></a>
-                            </h6>
-                        </span>
+                        </section>
+                    </div>
+                    <!-- 文章sample  e-->
+                    
+                    <div class="6u 12u(narrower)">
+                        <section class="link_box special">
+                            <a href="/2018/10/05/My%20Trip%20Logs%20%EF%BD%9C%20%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%B2%A1%E6%9C%89%E9%81%BF%E5%BC%80%E6%8B%A5%E6%8C%A4%E7%9A%84%E5%8D%81%E4%B8%80/">
+                                <div class="page_title"
+                                    style="background-image: url(https://test.img.hoski.cn/18-12-4/82144454.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
+                                    <!--标题-->
+                                    <h2 class="page_title_text"> 第一次没有避开拥挤的&#34;十一&#34; </h2>
+                                    <!--段落-->
+                                </div>
+                            </a>
+                            <div class="home-post-info">
+                                <!-- Author Avatar -->
+                                <div class="home-post-info-author-avatar">
+                                    <h6><span class="home-post-info-data">2018-10-05</span>
+                                    </h6>
+                                    <div class="home-post-info-Category">
+                                        <!-- Category -->
+                                        <span>
+                                            <h6>
+                                                <a class="post_category-link"
+                                                    target="_blank" rel="noopener" href="http://localhost:4000/categories/Algorithm/">
+                                                    <a class="post_category-link" href="/categories/My-Trip-Logs/">My Trip Logs</a></a>
+                                            </h6>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- 文章sample  e-->
-            
-                <div class="6u 12u(narrower)">
-                    <section class="link_box special">
-                       <a href="/2018/05/16/My%20Trip%20Logs%20%EF%BD%9C%20%E5%B0%8F%E9%BD%BF%E8%BD%AE%E7%9A%84%E9%A6%96%E5%B0%94%E5%88%9D%E5%8D%B0%E8%B1%A1/">
-                        <div class="page_title" style="background-image: url(https://test.img.hoski.cn/18-12-4/17158383.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
-                            <!--标题-->
-                             <h2 class="page_title_text"> 小齿轮的首尔初印象 </h2>
-                            <!--段落-->
-                        </div>
-                        </a>
-                        <div class="home-post-info">
-                            <!-- Author Avatar -->
-                            <div class="home-post-info-author-avatar">
-                                <h6><span class="home-post-info-data">2018-05-16</span></h6>
-                                <div class="home-post-info-Category">
-                                    <!-- Category -->
-                                    <span>
-                            <h6>
-                            <a class="post_category-link" target="_blank" rel="noopener" href="http://localhost:4000/categories/Algorithm/">
-                                <a class="post_category-link" href="/categories/My-Trip-Logs/">My Trip Logs</a></a>
-                            </h6>
-                        </span>
+                        </section>
+                    </div>
+                    <!-- 文章sample  e-->
+                    
+                    <div class="6u 12u(narrower)">
+                        <section class="link_box special">
+                            <a href="/2018/05/16/My%20Trip%20Logs%20%EF%BD%9C%20%E5%B0%8F%E9%BD%BF%E8%BD%AE%E7%9A%84%E9%A6%96%E5%B0%94%E5%88%9D%E5%8D%B0%E8%B1%A1/">
+                                <div class="page_title"
+                                    style="background-image: url(https://test.img.hoski.cn/18-12-4/17158383.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
+                                    <!--标题-->
+                                    <h2 class="page_title_text"> 小齿轮的首尔初印象 </h2>
+                                    <!--段落-->
+                                </div>
+                            </a>
+                            <div class="home-post-info">
+                                <!-- Author Avatar -->
+                                <div class="home-post-info-author-avatar">
+                                    <h6><span class="home-post-info-data">2018-05-16</span>
+                                    </h6>
+                                    <div class="home-post-info-Category">
+                                        <!-- Category -->
+                                        <span>
+                                            <h6>
+                                                <a class="post_category-link"
+                                                    target="_blank" rel="noopener" href="http://localhost:4000/categories/Algorithm/">
+                                                    <a class="post_category-link" href="/categories/My-Trip-Logs/">My Trip Logs</a></a>
+                                            </h6>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- 文章sample  e-->
-            
-                <div class="6u 12u(narrower)">
-                    <section class="link_box special">
-                       <a href="/2018/01/07/My%20Trip%20Logs%20%EF%BD%9C%20%E4%BA%A4%E4%BD%9C%E4%B8%9A%E4%BA%86%EF%BC%81%E6%96%B0%E5%8A%A0%E5%9D%A1%E4%B9%8B%E6%97%85%EF%BC%8C%E6%88%91%E7%9A%842017%E5%B9%B4%E7%BB%88%E4%B9%8B%E6%97%85/">
-                        <div class="page_title" style="background-image: url(https://test.img.hoski.cn/18-1-1/59437995.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
-                            <!--标题-->
-                             <h2 class="page_title_text"> 交作业了交作业了！新加坡之旅，我的2017年终之旅 </h2>
-                            <!--段落-->
-                        </div>
-                        </a>
-                        <div class="home-post-info">
-                            <!-- Author Avatar -->
-                            <div class="home-post-info-author-avatar">
-                                <h6><span class="home-post-info-data">2018-01-07</span></h6>
-                                <div class="home-post-info-Category">
-                                    <!-- Category -->
-                                    <span>
-                            <h6>
-                            <a class="post_category-link" target="_blank" rel="noopener" href="http://localhost:4000/categories/Algorithm/">
-                                <a class="post_category-link" href="/categories/My-Trip-Logs/">My Trip Logs</a></a>
-                            </h6>
-                        </span>
+                        </section>
+                    </div>
+                    <!-- 文章sample  e-->
+                    
+                    <div class="6u 12u(narrower)">
+                        <section class="link_box special">
+                            <a href="/2018/01/07/My%20Trip%20Logs%20%EF%BD%9C%20%E4%BA%A4%E4%BD%9C%E4%B8%9A%E4%BA%86%EF%BC%81%E6%96%B0%E5%8A%A0%E5%9D%A1%E4%B9%8B%E6%97%85%EF%BC%8C%E6%88%91%E7%9A%842017%E5%B9%B4%E7%BB%88%E4%B9%8B%E6%97%85/">
+                                <div class="page_title"
+                                    style="background-image: url(https://test.img.hoski.cn/18-1-1/59437995.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
+                                    <!--标题-->
+                                    <h2 class="page_title_text"> 交作业了交作业了！新加坡之旅，我的2017年终之旅 </h2>
+                                    <!--段落-->
+                                </div>
+                            </a>
+                            <div class="home-post-info">
+                                <!-- Author Avatar -->
+                                <div class="home-post-info-author-avatar">
+                                    <h6><span class="home-post-info-data">2018-01-07</span>
+                                    </h6>
+                                    <div class="home-post-info-Category">
+                                        <!-- Category -->
+                                        <span>
+                                            <h6>
+                                                <a class="post_category-link"
+                                                    target="_blank" rel="noopener" href="http://localhost:4000/categories/Algorithm/">
+                                                    <a class="post_category-link" href="/categories/My-Trip-Logs/">My Trip Logs</a></a>
+                                            </h6>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- 文章sample  e-->
-            
-                <div class="6u 12u(narrower)">
-                    <section class="link_box special">
-                       <a href="/2018/01/01/My%20Trip%20Logs%20%EF%BD%9C%20%E6%88%91%E7%9A%84%E5%88%9B%E4%B8%96%E7%BA%AA%E4%B9%8B%E6%97%85%EF%BC%8C%E4%B8%80%E5%9C%BA%E4%B8%8D%E8%AE%A4%E6%80%82%E7%9A%84%E6%97%85%E7%A8%8B/">
-                        <div class="page_title" style="background-image: url(https://test.img.hoski.cn/18-5-19/16857314.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
-                            <!--标题-->
-                             <h2 class="page_title_text"> 我的创世纪之旅，一场不认怂的旅程 </h2>
-                            <!--段落-->
-                        </div>
-                        </a>
-                        <div class="home-post-info">
-                            <!-- Author Avatar -->
-                            <div class="home-post-info-author-avatar">
-                                <h6><span class="home-post-info-data">2018-01-01</span></h6>
-                                <div class="home-post-info-Category">
-                                    <!-- Category -->
-                                    <span>
-                            <h6>
-                            <a class="post_category-link" target="_blank" rel="noopener" href="http://localhost:4000/categories/Algorithm/">
-                                <a class="post_category-link" href="/categories/My-Trip-Logs/">My Trip Logs</a></a>
-                            </h6>
-                        </span>
+                        </section>
+                    </div>
+                    <!-- 文章sample  e-->
+                    
+                    <div class="6u 12u(narrower)">
+                        <section class="link_box special">
+                            <a href="/2018/01/01/My%20Trip%20Logs%20%EF%BD%9C%20%E6%88%91%E7%9A%84%E5%88%9B%E4%B8%96%E7%BA%AA%E4%B9%8B%E6%97%85%EF%BC%8C%E4%B8%80%E5%9C%BA%E4%B8%8D%E8%AE%A4%E6%80%82%E7%9A%84%E6%97%85%E7%A8%8B/">
+                                <div class="page_title"
+                                    style="background-image: url(https://test.img.hoski.cn/18-5-19/16857314.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
+                                    <!--标题-->
+                                    <h2 class="page_title_text"> 我的创世纪之旅，一场不认怂的旅程 </h2>
+                                    <!--段落-->
+                                </div>
+                            </a>
+                            <div class="home-post-info">
+                                <!-- Author Avatar -->
+                                <div class="home-post-info-author-avatar">
+                                    <h6><span class="home-post-info-data">2018-01-01</span>
+                                    </h6>
+                                    <div class="home-post-info-Category">
+                                        <!-- Category -->
+                                        <span>
+                                            <h6>
+                                                <a class="post_category-link"
+                                                    target="_blank" rel="noopener" href="http://localhost:4000/categories/Algorithm/">
+                                                    <a class="post_category-link" href="/categories/My-Trip-Logs/">My Trip Logs</a></a>
+                                            </h6>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
+                        </section>
+                    </div>
+                    <!-- 文章sample  e-->
+                    
                 </div>
-                <!-- 文章sample  e-->
-            
-            </div>
-        </section>
+            </section>
         </div>
         <!-- 文章列表   end -->
         <!-- Main 主要部分 end -->
@@ -579,7 +656,22 @@
     <!-- Wrapper 外包 e-->
     <!-- Scripts -->
 </body>
+<script>
+    var slides = document.querySelectorAll('.slide'); // 获取所有图片元素
+    var currentSlideIndex = 0; // 记录当前展示的图片索引
 
+    function showNextSlide() {
+        slides[currentSlideIndex].classList.remove('active'); // 移除上一张图片的活动类名
+
+        if (++currentSlideIndex >= slides.length) {
+            currentSlideIndex = 0; // 如果已经到达最后一张图片，则重新从第一张开始
+        }
+
+        slides[currentSlideIndex].classList.add('active'); // 添加当前图片的活动类名
+    }
+
+    setInterval(showNextSlide, 5000); // 每隔3秒切换到下一张图片
+</script>
 
 
 </html>
