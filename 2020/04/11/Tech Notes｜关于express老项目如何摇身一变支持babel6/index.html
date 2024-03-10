@@ -47,22 +47,24 @@
 
 
         .slide {
-            display: none;
+
             /* 初始状态下所有图片都不显示 */
+            display: none;
             position: absolute;
-            /* 绝对定位，根据需要调整位置 */
             top: 0;
             left: 0;
-            bottom: 0;
-            right: 0;
             /* 添加动画效果 */
             animation-name: fadeIn;
             animation-duration: 2s;
             animation-timing-function: ease-in-out;
             animation-fill-mode: forwards;
             opacity: 0;
+            overflow: hidden;
             height: 100%;
             width: 100%;
+            background-position: center;
+            background-size: cover;
+            
         }
 
         .active {
