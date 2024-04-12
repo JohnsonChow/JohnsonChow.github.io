@@ -69,7 +69,9 @@
 /*
  * Basic Style
  */
-
+.gutter{
+    width: 25px;
+}
 #write {
     font-weight: 500;
     /* max-width: 950px; */
