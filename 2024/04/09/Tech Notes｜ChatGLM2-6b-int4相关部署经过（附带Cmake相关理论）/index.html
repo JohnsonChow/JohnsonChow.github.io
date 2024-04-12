@@ -255,14 +255,61 @@
 
         <div id="main">
             <div class="post_page_title_img"
-                style="height: 25rem;background-image: url(https://test.img.hoski.cn/18-12-4/17158383.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                style="height: 25rem;background-image: url(https://test.img.hoski.cn/WX20240412-191845.png# 略缩图);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
                 <a href="#" style="padding: 4rem 4rem 2rem 4rem ;">
-                    <h2>小齿轮的首尔初印象</h2>
+                    <h2>ChatGLM2-6b-int4相关部署经过（附带Cmake相关理论）</h2>
                 </a>
             </div>
             <!-- Post -->
             <div class="markdownChouworld" id="write" style="padding: 3rem;">
-                
+                <hr>
+<h2 id="ChatGLM2-6b-int4相关部署经过（附带Cmake相关理论）"><a href="#ChatGLM2-6b-int4相关部署经过（附带Cmake相关理论）" class="headerlink" title="ChatGLM2-6b-int4相关部署经过（附带Cmake相关理论）"></a>ChatGLM2-6b-int4相关部署经过（附带Cmake相关理论）</h2><blockquote>
+<p>[!NOTE]<br>Post Update time: 2024-04-09<br>Author: J Chow<br>原文链接: </p>
+</blockquote>
+<p>一、 引言</p>
+<p>本文主要是亲自尝试关于LangChain-ChatGLM-Webui项目所遇到的坑及相关思路。<br>首先本人第一次尝试自己部署大模型本地应用，在相关网站找到项目地址：<a target="_blank" rel="noopener" href="https://github.com/X-D-Lab/LangChain-ChatGLM-Webui">LangChain-ChatGLM-Webui</a>项目，其是一个基于Gradio一个应用框架（我认为起码可以算一个初始框架），并尝试按照其部署文件进行尝试，但是在本机器（MacBook Pro M2 Max）出现了各种问题，但是通过此些问题也加强了对于大模型应用的部署的理解。<br>这里感谢2个视频介绍及一个文章总结（请见文章结尾处的引用）。</p>
+<p>二、部署过程及坑点</p>
+<p>2.1 本机配置</p>
+<p>本机配置是Apple Macbook Pro，芯片是M2 Max，内存是32 GB，系统是14.2.1 (23C71)，给遇到同样问题的小伙伴指路。</p>
+<p>2.2 部署过程及错误提示解决过程</p>
+<ol>
+<li><p>首先本项目主要集成了主流大模型和embedding模型可以进行本地知识库的应用部署，因为本机内存的限制，本人准备尝试<code>chatglm2-6b-int4</code>模型及<code>text2vec-base-chinese</code>两个作为初始模型。这里修改初始化配置可以在项目<code>config.py</code>中进行修改，本人直接因为内存原因直接将其他无法尝试的模型进行了注释，这里如果大家同样机型可以尝试本人fork后的项目(<a target="_blank" rel="noopener" href="https://github.com/JohnsonChow/LangChain-ChatGLM-Webui">地址链接</a>)。</p>
+</li>
+<li><p>下载模型问题，建议可以下载本项目提供的国内地址（启智社区），可以尝试直接HuggingFace中下载。</p>
+</li>
+<li><p>在运行项目<code>python app.py</code>后存在以下Mac M系列会出现的问题。<br> 3.1 <strong>fatal error:’omp.h’ file not found</strong><br> 这个问题非常煎熬对于本人，这是因为本机库的问题，本以为按照如下代码就可以进行安装，但是并没有如愿，如果有其他伙伴尝试通过了，可以联系我。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install libomp</span><br></pre></td></tr></table></figure>
+
+<p>并且通过命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew --prefix libomp</span><br></pre></td></tr></table></figure>
+
+<p>确保在安装目录下<code>/opt/homebrew/opt/libomp</code> 的<code>include</code>文件夹下，根据某度各种文章，我们可以替换提示错误相关<code>.c</code>文件的头文件地址改成绝对路径。但是此问题虽然解决了<code>fatal error:&#39;omp.h&#39; file not found</code>的报错，但是带来了3.2错误<code>library &#39;omp&#39; not found</code>。因为本人敏感的发现每次都会在<code>/.cashe/...</code>文件夹下生成如下文件，所以肯定不是修改绝对路径这种操作，随即修改回<code>#include&lt;omp.h&gt;</code>。</p>
+<p> 3.2 <strong>library ‘omp’ not found</strong><br> 这里我们再次感叹一下关于这个<code>omp</code>的内容，因为这个其实除了头文件外，应该是本地的omp文件库，所以本人根据某度尝试了多个包的安装但都无果，最后看到参考3所说的手动安装<code>omp</code>到<code>/usr/local</code>下，操作方法如下，但仍然没有效果，同时本人也清理了缓存。</p>
+<blockquote>
+<p>参考<a target="_blank" rel="noopener" href="https://mac.r-project.org/openmp/">OpenMP on macOS with Xcode tools</a> 假设: <code>gcc(clang)</code>是<code>14.x</code>版本，其他版本见<code>R-Project</code>提供的表格此时会安装下面几个文件：<code>/usr/local/lib/libomp.dylib</code>, <code>/usr/local/include/ompt.h</code>, <code>/usr/local/include/omp.h</code>, <code>/usr/local/include/omp-tools.h</code>。<br>注意：如果你之前运行<code>ChatGLM</code>项目失败过，最好清一下<code>Hugging Face</code>的缓存，i.e. 默认下是 <code>rm -rf $&#123;HOME&#125;/.cache/huggingface/modules/transformers_modules/chatglm-6b-int4</code>。由于使用了rm命令，请明确知道自己在删除什么。</p>
+</blockquote>
+<p> 本人同时进一步发现，因为本机没有omp这个模块，导致其无法通过Clang命令中的两个命令（-fopenmp,-lomp）生成.so。博主为了隔离是否因为<code>HF</code>的程序导致脏处理，所以手动命令如下，</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo clang -O3 -fPIC -pthread -Xclang -fopenmp -lomp -std=c99 </span><br><span class="line">/&#123;$HOME&#125;/.cache/huggingface/modules/transformers_modules/chatglm2-6b-int4/quantization_kernels_parallel.c</span><br><span class="line">-shared -o </span><br><span class="line">/&#123;$HOME&#125;/.cache/huggingface/modules/transformers_modules/chatglm2-6b-int4/quantization_kernels_parallel.so </span><br></pre></td></tr></table></figure>
+
+<p>但仍然依然报错，所以确定了问题还是出现在关于本机模块安装问题。下面给出我当时的2个思路，第一个是手动<code>gcc</code>帮助其编译成<code>.so</code>文件，第二个尝试重新安装<code>clang</code>环境。</p>
+<p>由于本人对<code>gcc</code>并不熟悉，先尝试第二个方法，重新安装了<code>llvm</code>环境，并且退出重进需环境，没想到起码并没有此类报错。所以本人没有尝试第一种思路，但会在文章第三部分，将附上本人学习的内容结果，帮助大家在M系列Mac机器如何手动编译<code>.c</code>文件。</p>
+<p>3.3 <strong>Failed to load cpm_kernels:Unknown platform: darwin</strong></p>
+<p>无需理会，只在int4这个模型中才会出现。</p>
+</li>
+</ol>
+<p>综上，本人最后发现是因为权限不足导致<code>libomp</code>无法编译，最后使用<code>sudo</code>得以解决。</p>
+<p>三、关于<code>CMake</code>、<code>makelists</code>、<code>clang</code>和<code>gcc</code>的关系</p>
+<blockquote>
+<p>Refs：</p>
+<ol>
+<li><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1t8411y7fp/?spm_id_from=333.337.search-card.all.click&vd_source=967d005ff745af103d14a8186d8f8f5e">ChatGLM+Langchain构建本地知识库，只需6G显存，支持实时上传文档</a></p>
+</li>
+<li></li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_26819733/article/details/131563492">macbook安装chatglm2-6b</a></p>
+</li>
+</ol>
+</blockquote>
+
             </div>
 
             <!-- Post Comments -->
@@ -324,8 +371,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://blog.chouworld.cc/2018/05/16/My%20Trip%20Logs%20%EF%BD%9C%20%E5%B0%8F%E9%BD%BF%E8%BD%AE%E7%9A%84%E9%A6%96%E5%B0%94%E5%88%9D%E5%8D%B0%E8%B1%A1/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://blog.chouworld.cc/2018/05/16/My%20Trip%20Logs%20%EF%BD%9C%20%E5%B0%8F%E9%BD%BF%E8%BD%AE%E7%9A%84%E9%A6%96%E5%B0%94%E5%88%9D%E5%8D%B0%E8%B1%A1/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://blog.chouworld.cc/2024/04/09/Tech%20Notes%EF%BD%9CChatGLM2-6b-int4%E7%9B%B8%E5%85%B3%E9%83%A8%E7%BD%B2%E7%BB%8F%E8%BF%87%EF%BC%88%E9%99%84%E5%B8%A6Cmake%E7%9B%B8%E5%85%B3%E7%90%86%E8%AE%BA%EF%BC%89/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://blog.chouworld.cc/2024/04/09/Tech%20Notes%EF%BD%9CChatGLM2-6b-int4%E7%9B%B8%E5%85%B3%E9%83%A8%E7%BD%B2%E7%BB%8F%E8%BF%87%EF%BC%88%E9%99%84%E5%B8%A6Cmake%E7%9B%B8%E5%85%B3%E7%90%86%E8%AE%BA%EF%BC%89/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
