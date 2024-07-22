@@ -24,7 +24,7 @@
           content: ' ';
           position: fixed;
           top: 0;
-          background: url('https://test.img.hoski.cn/thub_background1.jpg') center 0 no-repeat;
+          background: url('http://cc.image.hoski.cn/thub_background1.jpg') center 0 no-repeat;
           right: 0;
           bottom: 0;
           left: 0;
@@ -255,7 +255,7 @@
 
         <div id="main">
             <div class="post_page_title_img"
-                style="height: 25rem;background-image: url(https://test.img.hoski.cn/blog/%2A%2AWX20200411-204643%402x.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                style="height: 25rem;background-image: url(http://cc.image.hoski.cn/blog/%2A%2AWX20200411-204643%402x.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
                 <a href="#" style="padding: 4rem 4rem 2rem 4rem ;">
                     <h2>关于express老项目如何摇身一变支持babel6+</h2>
                 </a>
@@ -287,7 +287,7 @@
 <blockquote>
 <p>这里博主就遇到过以上两个大坑，导致机器npm环境直接损毁，这里有点夸张，主要是感觉程序环境洁癖导致的夸张说法，不知道有没有同仁也是如此。</p>
 </blockquote>
-<h3 id="开动"><a href="#开动" class="headerlink" title="开动"></a>开动</h3><h4 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h4><p><img src="https://test.img.hoski.cn/blog/schedule1.png"></p>
+<h3 id="开动"><a href="#开动" class="headerlink" title="开动"></a>开动</h3><h4 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h4><p><img src="http://cc.image.hoski.cn/blog/schedule1.png"></p>
 <p>对于原来项目，这里我们首先在原有的项目中的<code>package.json</code>增加以下依赖作为提前准备工作。</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">&quot;babel-cli&quot;</span>: <span class="string">&quot;^6.26.0&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;babel-node&quot;</span>: <span class="string">&quot;0.0.1-security&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;babel-runtime&quot;</span>: <span class="string">&quot;^6.26.0&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;body-parser&quot;</span>: <span class="string">&quot;^1.18.3&quot;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>并且新建文件<code>.babelrc</code>，这里<strong>很关键</strong>，如下配置文件所示内容。</p>
